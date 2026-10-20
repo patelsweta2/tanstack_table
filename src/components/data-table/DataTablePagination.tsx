@@ -14,7 +14,7 @@ type Props<TData> = {
 
 export function DataTablePagination<TData>({ table, pageSizeOptions = [25, 50, 100] }: Props<TData>) {
   const { pageIndex, pageSize } = table.getState().pagination;
-  const totalRows = table.getFilteredRowModel().rows.length; // search ke baad wali rows
+  const totalRows = table.getFilteredRowModel().rows.length;
 
   const start = totalRows === 0 ? 0 : pageIndex * pageSize + 1;
   const end = Math.min((pageIndex + 1) * pageSize, totalRows);
